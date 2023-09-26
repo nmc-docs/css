@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkhtml=self.webpackChunkhtml||[]).push([[396],{9332:e=>{e.exports=JSON.parse('{"title":"Flexbox","slug":"/category/flexbox","permalink":"/css/category/flexbox","navigation":{"previous":{"title":"Display","permalink":"/css/display"},"next":{"title":"Gi\u1edbi thi\u1ec7u","permalink":"/css/flex-box/introduce"}}}')}}]);
