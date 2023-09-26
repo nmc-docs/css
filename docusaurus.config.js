@@ -6,12 +6,12 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "HTML",
+  title: "CSS",
   tagline: "Dinosaurs are cool",
   favicon: "img/logo.svg",
   url: "https://github.com", // Your website URL
-  baseUrl: "/html/",
-  projectName: "html",
+  baseUrl: "/css/",
+  projectName: "css",
   organizationName: "nmc-docs",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -43,7 +43,7 @@ const config = {
       // Replace with your project's social card
       // image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "HTML",
+        title: "CSS",
         logo: {
           alt: "My Site Logo",
           src: "img/logo.svg",
