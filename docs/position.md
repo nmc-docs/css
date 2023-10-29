@@ -32,3 +32,13 @@ sidebar_position: 4
   </div>
 </div>
 ```
+
+## inset
+
+- Thuộc tính `inset` thiết lập vị trí (`top`, `bottom`, `right`, `left`) cho phần tử con có `position: absolute` so với phần tử cha có `position: relative` hoặc `position: absolute`
+
+| Property | Value                                                                                         |
+| -------- | --------------------------------------------------------------------------------------------- |
+| `inset`  | `apx bpx cpx dpx`: Thiết lập vị trí trên, phải, dưới, trái cho phần tử con so với phần tử cha |
+
+![1698587467049](image/position/1698587467049.png)
