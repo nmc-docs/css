@@ -13,7 +13,7 @@ sidebar_position: 20
 | `right`  | Đặt khoảng cách từ phần phải của phần tử đến phần phải của phần tử cha |
 | `bottom` | Đặt khoảng cách từ phần dưới của phần tử đến phần dưới của phần tử cha |
 
-:::note
+:::caution
 
 - Lưu ý: Các thuộc tính `top`, `left`, `right`, `bottom` chỉ hoạt động đối với phần tử có `position` **KHÔNG PHẢI** là `static` (tức chỉ hoạt động với các phần tử có `position` là `relative`, `absolute`, `fixed`)
 
@@ -25,16 +25,20 @@ sidebar_position: 20
 
 :::info
 
-Nếu phần tử có thuộc tính `top`, `bottom`, `left`, `right` có giá trị đơn vị là **%** thì giá trị phần trăm đó được tính theo phần trăm **width** / **height** của phần tử cha, ví dụ:
+Nếu phần tử có thuộc tính `top`, `bottom`, `left`, `right` có giá trị đơn vị là **%** thì giá trị phần trăm đó được tính theo phần trăm **width** / **height** của:
+
+- Phần [content](./layout-of-element) của phần tử cha nếu nó có `position: relative`
+- Toàn bộ chiều dài, chiều cao của phần tử cha (bao gồm **padding**, **border**) nếu nó có `position: absolute, fixed`
+- Ví dụ:
 
 ```html
-<div class="w-[500px] h-[150px] relative">
-  <div class="w-12 h-12 absolute left-[25%]">
-    Phần tử con này sẽ cách phần tử cha về phía bên trái 25% so với chiều dài
-    của phần tử cha. Tức 25% của 500px là 125px
-  </div>
+<div className="h-[400px] w-[360px] bg-red-500 relative p-4">
+  <div className="w-8 h-8 bg-yellow-400 relative top-[100%]"></div>
+  <div className="w-8 h-8 bg-blue-400 absolute left-[30%] top-[100%]"></div>
 </div>
 ```
+
+![1699777340076](image/top-bottom-right-left/1699777340076.png)
 
 :::
 

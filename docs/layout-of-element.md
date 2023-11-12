@@ -5,7 +5,7 @@ sidebar_position: 3
 # Layout of element
 
 - Layout của một phần tử theo thứ tự từ trong ra ngoài gồm các phần:
-  - **content**
+  - **content** (màu xanh da trời)
   - **padding**
   - **border**
   - **outline**
