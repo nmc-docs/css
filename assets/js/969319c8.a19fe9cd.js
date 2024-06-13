@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreactjs=self.webpackChunkreactjs||[]).push([[462],{5800:e=>{e.exports=JSON.parse('{"categoryGeneratedIndex":{"title":"CSS Selectors","slug":"/category/css-selectors","permalink":"/css/category/css-selectors","sidebar":"tutorialSidebar","navigation":{"next":{"title":"Gi\u1edbi thi\u1ec7u","permalink":"/css/"}}}}')}}]);
