@@ -81,11 +81,12 @@ Chú ý: điều kiện để có thể sử dụng giá trị `auto` là:
 
 - Phần tử ở dạng cấp khối (`display: block`)
 - Phần tử **KHÔNG** có thuộc tính `position: fixed` hoặc `position: absolute`
-- Phần tử **PHẢI** có thuộc tính `width` ở dạng pixel
+- Phần tử **PHẢI** có chiều dài xác định
 
 :::
 
 - `margin-top`, `margin-bottom`, `margin-left`, `margin-right` có thể nhận giá trị âm. Ví dụ `margin-top: -5px` sẽ đẩy phần tử lên trên **5px** thay vì đẩy phần tử xuống **5px** . Các thuộc tính khác tương tự.
+- Ngoài ra chúng còn có thể nhận giá trị theo đơn vị %. Đơn vị % này được tính theo chiều dài/cao của phần tử cha container bao nó.
 
 ## Box-sizing
 
