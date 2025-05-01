@@ -12,3 +12,12 @@ sidebar_position: 2
 | `min-height` | `apx, a%`: Thiết lập chiều cao tối thiểu cho phần tử                                                                                                                                             |
 | `max-width`  | `apx, a%`: Thiết lập chiều rộng tối đa cho phần tử                                                                                                                                               |
 | `max-height` | `apx, a%`: Thiết lập chiều cao tối đa cho phần tử                                                                                                                                                |
+
+:::note[Chú ý]
+
+- Nếu thuộc tính trên có giá trị phần trăm thì:
+  - Nếu phần tử có `position: relative`: Được tính theo phần trăm phần **content** của phần tử cha.
+  - Nếu phần tử có `position: absolute`: Được tính theo phần trăm phần của phần **padding + content + border** của phần tử cha.
+  - Xem thêm về **content**, **padding**, **border** [tại đây](./layout-of-element)
+
+:::
