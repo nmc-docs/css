@@ -31,14 +31,49 @@ Nếu phần tử có thuộc tính `top`, `bottom`, `left`, `right` có giá tr
 - Toàn bộ chiều dài, chiều cao của phần tử cha (bao gồm **padding**, **border**) nếu nó có `position: absolute, fixed`
 - Ví dụ:
 
-```html
-<div className="h-[400px] w-[360px] bg-red-500 relative p-4">
-  <div className="w-8 h-8 bg-yellow-400 relative top-[100%]"></div>
-  <div className="w-8 h-8 bg-blue-400 absolute left-[30%] top-[100%]"></div>
-</div>
-```
+```jsx live
+function MyComponent(props) {
+  return (
+    <>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            .container-1509 {
+              height: 400px;
+              width: 360px;
+              background-color: #ef4444;
+              position: relative;
+              padding: 1rem;
+              margin: 30px;
+            }
 
-![1699777340076](image/top-bottom-right-left/1699777340076.png)
+            .yellow-box {
+              width: 2rem;
+              height: 2rem;
+              background-color: #facc15;
+              position: relative;
+              top: 100%;
+            }
+
+            .blue-box {
+              width: 2rem;
+              height: 2rem;
+              background-color: #60a5fa;
+              position: absolute;
+              left: 30%;
+              top: 100%;
+            }
+          `,
+        }}
+      />
+      <div className="container-1509">
+        <div className="yellow-box"></div>
+        <div className="blue-box"></div>
+      </div>
+    </>
+  );
+}
+```
 
 :::
 

@@ -1,0 +1,183 @@
+---
+sidebar_position: 25
+---
+
+# Masking
+
+## 1. Masking là gì?
+
+- Masking trong CSS là quá trình sử dụng một hình ảnh hoặc gradient để kiểm soát phần nào của phần tử sẽ hiển thị, phần nào bị ẩn.
+  - **Phần hiển thị** : nơi mặt nạ có độ mờ cao (trắng)
+  - **Phần bị ẩn** : nơi mặt nạ có độ mờ thấp (đen)
+
+## 2. Cấu trúc thuộc tính cơ bản
+
+| Thuộc tính      | Giá trị                                                                                 | Mô tả                                  |
+| --------------- | --------------------------------------------------------------------------------------- | -------------------------------------- |
+| `mask-image`    | `url(...)`<br />`linear-gradient(...)`                                                  | Hình ảnh hoặc gradient dùng làm mặt nạ |
+| `mask-repeat`   | `repeat`<br />`repeat-x`<br />`repeat-y`<br />`no-repeat`                               | Lặp lại mặt nạ hay không               |
+| `mask-size`     | `contain`<br />`cover`<br />Đơn vị px, %                                                | Kích thước mặt nạ                      |
+| `mask-position` | `left top`<br />`left center`<br />`left bottom`<br />...<br />_x% y%_<br />_xpos ypos_ | Vị trí của mặt nạ                      |
+| `mask-origin`   | `border-box`<br />`content-box`<br />`padding-box`                                      | Mốc bắt đầu của mặt nạ                 |
+
+:::note
+
+- Các thuộc tính trên về ý nghĩa thì khá giống với **background**. Xem chi tiết [tại đây](./background)
+
+:::
+
+## 3. Ví dụ mask với image
+
+```jsx live
+function MyComponent(props) {
+  return (
+    <>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            .masked-image {
+              width: 800px;
+              height: 200px;
+              border: 10px solid yellow;
+              padding: 20px;
+              box-sizing: border-box;
+              background-color: teal;
+              transition: mask-position 0.6s ease-in-out;
+
+              mask-size: contain;
+              mask-repeat: no-repeat;
+              mask-position: 0 0;
+              mask-image: url(https://cdn-icons-png.flaticon.com/512/1384/1384005.png);
+              mask-origin: border-box; /* Thay đổi thành content-box, padding-box để thấy sự khác biệt */
+            }
+
+            .masked-image:hover {
+              mask-position: 100% 0;
+            }
+          `,
+        }}
+      />
+      <div className="masked-image"></div>
+    </>
+  );
+}
+```
+
+## 4. Ví dụ mask với linear-gradient
+
+### Ví dụ 1:
+
+```jsx live
+function MyComponent(props) {
+  return (
+    <>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            .masked-gradient-basic {
+              width: 800px;
+              height: 200px;
+              border: 10px solid yellow;
+              padding: 20px;
+              box-sizing: border-box;
+              background-color: teal;
+
+              mask-repeat: no-repeat;
+              mask-position: 0 0;
+              mask-size: 100% 100%;
+              mask-image: linear-gradient(90deg,#000 33%,#0000 66%);
+            }
+          `,
+        }}
+      />
+      <div className="masked-gradient-basic"></div>
+    </>
+  );
+}
+```
+
+:::info[Phân tích]
+
+- Phân tích gradient:
+
+  - `90deg`: Gradient đi từ trái sang phải.
+  - `#000 33%`: Từ 0% đến 33% chiều rộng của phần tử, mask là màu đen (#000), tức là **hiển thị hoàn toàn**.
+  - `#0000 66%`: Từ 33% đến 66% chiều rộng, gradient chuyển từ đen sang trong suốt (#0000). Phần này sẽ chuyển dần từ **hiển thị** sang **ẩn**.
+  - Sau 66%: Từ 66% đến 100%, gradient duy trì trạng thái trong suốt (#0000), tức là **ẩn hoàn toàn**.
+
+- Phần hiển thị và phần ẩn:
+  - **Phần hiển thị**: Từ 0% đến 33% chiều rộng của phần tử, nội dung (hình ảnh hoặc nền) sẽ **hiển thị hoàn toàn** vì mask là đen (#000).
+  - **Phần chuyển tiếp**: Từ 33% đến 66%, nội dung dần dần **mờ đi** (từ hiển thị sang ẩn) do gradient chuyển từ đen sang trong suốt.
+  - **Phần ẩn**: Từ 66% đến 100%, nội dung **bị ẩn hoàn toàn** vì mask là trong suốt (#0000).
+
+:::
+
+### Ví dụ 2:
+
+```jsx live
+function MyComponent(props) {
+  return (
+    <>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            .masked-gradient {
+              width: 800px;
+              height: 200px;
+              border: 10px solid yellow;
+              padding: 20px;
+              box-sizing: border-box;
+              background-color: teal;
+              transition: mask-position 0.6s ease-in-out;
+
+              mask-repeat: no-repeat;
+              mask-position: 0 0;
+              mask-size: 300% 100%;
+              mask-image: linear-gradient(90deg,#000 33%,#0000 66%);
+            }
+
+            .masked-gradient:hover {
+              mask-position: 100% 0;
+            }
+          `,
+        }}
+      />
+      <div className="masked-gradient"></div>
+    </>
+  );
+}
+```
+
+### Ví dụ 3
+
+```jsx live
+function MyComponent(props) {
+  return (
+    <>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            .masked-radial-gradient {
+              width: 600px;
+              height: 400px;
+              box-sizing: border-box;
+              background-image: url(https://www.w3schools.com/cssref/img_5terre.jpg);
+              transition: mask-position 0.6s ease-in-out;
+
+              mask-repeat: no-repeat;
+              mask-position: 0 0;
+              mask-size: 50% 100%; /* Chỉnh 50% 100% thành 150% 150% để xem sự khác biệt */
+              mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);
+            }
+
+            .masked-radial-gradient:hover {
+              mask-position: 100% 0;
+            }
+          `,
+        }}
+      />
+      <div className="masked-radial-gradient"></div>
+    </>
+  );
+}
+```

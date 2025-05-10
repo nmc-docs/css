@@ -10,7 +10,7 @@ sidebar_position: 21
 ```css
 .container {
   width: 300px; /* Chiều rộng của phần tử container */
-  aspect-ratio: 1 / 1; /* Tỷ lệ khía cạnh 16:9 */
+  aspect-ratio: 1 / 1; /* Tỷ lệ khía cạnh 1:1 */
 }
 ```
 
