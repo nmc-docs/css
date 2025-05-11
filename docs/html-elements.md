@@ -19,5 +19,7 @@ sidebar_position: 2
   - Nếu phần tử có `position: relative`: Được tính theo phần trăm phần **content** của phần tử cha.
   - Nếu phần tử có `position: absolute`: Được tính theo phần trăm phần của phần **padding + content + border** của phần tử cha.
   - Xem thêm về **content**, **padding**, **border** [tại đây](./layout-of-element)
+- Đối với phần tử có `display: block` thì giá trị mặc định của **width là 100% so với phần tử cha**. Còn nếu nó có `display: inline` hoặc `display: inline-block` thì width sẽ phụ thuộc vào nội dung bên trong nó.
+- Mặc dù giá trị mặc định là `width: 100%` đối với phần tử có `display: block` nhưng width của nó có thể lớn hơn phần tử cha và tràn ra ngoài nếu nội dung bên trong quá dài. Khi đó ta phải ép `width: 100%` hoặc sử dụng [overflow](./overflow)
 
 :::
