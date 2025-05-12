@@ -91,3 +91,36 @@ Trong đó:
 | `animation-fill-mode`       | `forwards`: Khi animation chạy xong. Phần tử sẽ đứng yên tại vị trí nó kết thúc<br />`backwards`: Khi animation chạy xong. Phần tử sẽ quay trở lại vị trí ban đầu nó xuất phát                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | `animation-play-state`      | `paused`: Chỉ định animation dừng lại<br />`running`: Chỉ định animation hoạt động                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `animation`                 | **Name** **Duration** **Timing-function** **Delay** **Iteration-count** **Direction** **Fill-mode** **Play-state** <br />Cú pháp viết tắt cho tất cả thuộc tính trên theo thứ tự được chỉ định                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+
+:::caution[Lưu ý]
+
+- Trong React, nếu một component có animation thì animation đó sẽ chỉ chạy 1 lần duy nhất khi **component mounted**, còn component re-render thì nó sẽ **KHÔNG** chạy lại.
+- Còn trong trường hợp ta có 2 class định nghĩa 2 animation khác nhau và chỉ định chúng trong class theo điều kiện thì lúc này nó sẽ được chạy lại, ví dụ:
+
+```tsx
+import React from "react";
+
+const MyComponent = () => {
+  const [animationType, setAnimationType] = React.useState("in");
+  return (
+    <>
+      <div
+        className={`${animationType === "in" ? "animated-in" : "animated-out"}`}
+      >
+        MyComponent
+      </div>
+      <button
+        onClick={() => setAnimationType(animationType === "in" ? "out" : "in")}
+      >
+        Toggle animation
+      </button>
+    </>
+  );
+};
+
+export default MyComponent;
+```
+
+👉`animationType` từ `"in"` sang `"out"`: `animated-out` sẽ được chạy và ngược lại. Còn nếu `animationType` không thay đổi (`"in" -> "in", "out" -> "out"`) thì sẽ không chạy lại
+
+:::
