@@ -4,15 +4,20 @@ sidebar_position: 18
 
 # Animation
 
-- **Animation** là thuộc tính tạo hiệu ứng cho phần tử
+- **Định nghĩa**: animation cho phép tạo các hiệu ứng phức tạp hơn bằng cách sử dụng các **keyframe** để xác định nhiều giai đoạn của hiệu ứng.
+- **Cách hoạt động** :
+  - Có thể chạy tự động mà không cần sự kiện kích hoạt.
+  - Dựa trên `@keyframes` để xác định các bước thay đổi của thuộc tính CSS.
+  - Hỗ trợ lặp lại, tạm dừng, và kiểm soát chi tiết hơn.
 
 ## Sự khác nhau giữa Transition và Animation
 
-| Property                                                                                               | Value                                                                                                          |
-| ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
-| Tạo hiệu ứng cho phần tử từ trạng thái bắt đầu đến trạng thái kết thúc. Không có trạng thái trung gian | Tạo hiệu ứng cho phần tử từ trạng thái bắt đầu đến trạng thái kết thúc, có thể có trạng thái trung gian ở giữa |
-| Hiệu ứng chỉ có thể chạy một lần duy nhất                                                              | Có thể chạy tới số lần ta chỉ định hoặc chạy vô hạn                                                            |
-| Hiệu ứng cần trigger để chạy (như hover, focus)                                                        | Có thể trigger hoặc nó có thể chạy tự động                                                                     |
+| Tiêu chí        | Transition                                     | Animation                                |
+| --------------- | ---------------------------------------------- | ---------------------------------------- |
+| **Kích hoạt**   | Cần sự kiện (hover, click, toggle class, v.v.) | Có thể tự động hoặc do sự kiện           |
+| **Độ phức tạp** | Đơn giản, chuyển đổi giữa 2 trạng thái         | Phức tạp, nhiều trạng thái qua keyframes |
+| **Lặp lại**     | Không hỗ trợ lặp lại                           | Hỗ trợ lặp lại (infinite hoặc số lần)    |
+| **Kiểm soát**   | Giới hạn, chỉ định thuộc tính cụ thể           | Linh hoạt, kiểm soát nhiều giai đoạn     |
 
 ![1695743254839](image/animation/1695743254839.png "Ảnh mô tả sự khác nhau giữa Transition với Animation")
 
