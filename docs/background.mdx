@@ -6,15 +6,16 @@ sidebar_position: 8
 
 - **Background** dùng để tạo kiểu cho nền.
 
-| Property                | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `background-color`      | Tên màu ở hệ RGB hoặc hex<br />`transparent`: màu trong suốt                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `background-image`      | Tạo kiểu nền là hình ảnh hoặc màu linear gradient<br />`linear-gradient(...)`<br />`url("Link to image")`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| `background-attachment` | `scroll`: ảnh nền bị cuộn lên khi ta cuộn xuống<br />`fixed`: ảnh nền luôn được cố định khi ta cuộn lên/xuống                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| `background-repeat`     | `no-repeat`: không lặp lại ảnh nền<br />`repeat`: nếu kích thước ảnh nền không vừa với container, ảnh nền đó sẽ được lặp lại theo chiểu dọc lẫn chiều ngang để phủ toàn bộ container<br />`repeat-x`: ảnh nền lặp lại theo chiều ngang<br />`repeat-y`: ảnh nền lặp lại theo chiều dọc                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| `background-size`       | Thiết lập kích thước cho hình nền<br />`apx bpx`: Thiết lập kích thước hình nền ở dạng pixel, giá trị thứ nhất là chiều dài, giá trị thứ hai là chiều cao<br />`x% y%`: Thiết lập kích thước ở dạng phần trăm so với kích thước của container<br />`cover`: Ảnh vẫn được giữ nguyên tỉ lệ như ban đầu, **có thể bị cắt xén** và sẽ **fill kín toàn bộ container**<br />`contain`: Ảnh vẫn được giữ nguyên tỉ lệ như ban đầu, **không bị cắt xén** nhưng **có thể không fill kín hết container**                                                                                                                                                                                                                         |
-| `background-clip`       | `border-box`: ảnh nền được bao phủ từ phần border của container trở vào trong<br />`padding-box`: ảnh nền được bao phủ từ phần padding của container trở vào trong<br />`content-box`: ảnh nền được bao phủ từ phần content của container trở vào trong<br />`text`: ảnh nền chỉ bao phủ bên text                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| `background-origin`     | Xác định vị trí bắt đầu (gốc) của hình ảnh nền trong một phần tử. Nó kiểm soát cách hình ảnh nền được đặt tương đối với các vùng của phần tử như vùng nội dung (content), vùng đệm (padding) hoặc vùng viền (border).<br />`padding-box` (mặc định): Hình ảnh nền được đặt bắt đầu từ vùng **padding** (bao gồm nội dung và phần padding, nhưng không bao gồm border).<br />`border-box`: Hình ảnh nền được đặt bắt đầu từ vùng **border** (bao gồm border, padding và content).<br />`content-box`: Hình ảnh nền được đặt bắt đầu từ vùng **content** (chỉ bao gồm content, không bao gồm padding hoặc border).<br/>Xem ví dụ [tại đây](https://www.w3schools.com/cssref/tryit.php?filename=trycss3_background-origin) |
+| Property                | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `background-color`      | Tên màu ở hệ RGB hoặc hex<br />`transparent`: màu trong suốt                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `background-image`      | Tạo kiểu nền là hình ảnh hoặc màu linear gradient<br />`linear-gradient(...)`<br />`url("Link to image")`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `background-attachment` | `scroll`: ảnh nền bị cuộn lên khi ta cuộn xuống<br />`fixed`: ảnh nền luôn được cố định khi ta cuộn lên/xuống                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `background-repeat`     | `no-repeat`: không lặp lại ảnh nền<br />`repeat`: nếu kích thước ảnh nền không vừa với container, ảnh nền đó sẽ được lặp lại theo chiểu dọc lẫn chiều ngang để phủ toàn bộ container<br />`repeat-x`: ảnh nền lặp lại theo chiều ngang<br />`repeat-y`: ảnh nền lặp lại theo chiều dọc                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `background-size`       | Thiết lập kích thước cho hình nền<br />`apx bpx`: Thiết lập kích thước hình nền ở dạng pixel, giá trị thứ nhất là chiều dài, giá trị thứ hai là chiều cao<br />`x% y%`: Thiết lập kích thước ở dạng phần trăm so với kích thước của container<br />`cover`: Ảnh vẫn được giữ nguyên tỉ lệ như ban đầu, **có thể bị cắt xén** và sẽ **fill kín toàn bộ container**<br />`contain`: Ảnh vẫn được giữ nguyên tỉ lệ như ban đầu, **không bị cắt xén** nhưng **có thể không fill kín hết container**                                                                                                                                                                                                                          |
+| `background-clip`       | `border-box`: ảnh nền được bao phủ từ phần border của container trở vào trong<br />`padding-box`: ảnh nền được bao phủ từ phần padding của container trở vào trong<br />`content-box`: ảnh nền được bao phủ từ phần content của container trở vào trong<br />`text`: ảnh nền chỉ bao phủ bên text                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `background-origin`     | Xác định vị trí bắt đầu (gốc) của hình ảnh nền trong một phần tử. Nó kiểm soát cách hình ảnh nền được đặt tương đối với các vùng của phần tử như vùng nội dung (content), vùng đệm (padding) hoặc vùng viền (border).<br />`padding-box` (mặc định): Hình ảnh nền được đặt bắt đầu từ vùng **padding** (bao gồm nội dung và phần padding, nhưng không bao gồm border).<br />`border-box`: Hình ảnh nền được đặt bắt đầu từ vùng **border** (bao gồm border, padding và content).<br />`content-box`: Hình ảnh nền được đặt bắt đầu từ vùng **content** (chỉ bao gồm content, không bao gồm padding hoặc border).<br />Xem ví dụ [tại đây](https://www.w3schools.com/cssref/tryit.php?filename=trycss3_background-origin) |
+| `background`            | Là cú pháp viết ngắn gọn theo thứ tự:<br />`<background-color>` `<background-image>` `<background-position>` `<background-size>` `<background-repeat>` `<background-origin>` `<background-clip>` `<background-attachment>`<br />Ta không cần phải khai báo đủ tất cả các thuộc tính — chỉ cần viết những ta cần.                                                                                                                                                                                                                                                                                                                                                                                                         |
 
 ## background-position
 
@@ -65,6 +66,28 @@ background-position: 100% 0%; /* góc trên bên phải */
 background-position: right; /* tương đương right center */
 background-position: 30px; /* tương đương 30px center */
 ```
+
+## Một số chú ý
+
+:::info[Ghi chú]
+
+- Ta có thể chỉ định một hoặc nhiều background, và được ngăn cách nhau bằng dấu phẩy, ví dụ:
+
+```css
+.box {
+  padding: 10px;
+  background-color: #cccccc;
+  background-image: url("img_tree.gif"), url("paper.gif");
+  background-repeat: no-repeat, repeat;
+  background-origin: content-box, padding-box;
+}
+```
+
+:::
+
+- Không nên nhầm lẫn như sau:
+
+![1746888101804](image/background/1746888101804.png)
 
 ## Một số ví dụ
 
@@ -128,8 +151,75 @@ function MyComponent(props) {
 }
 ```
 
-## Lưu ý
+### Tạo linear gradient border:
 
-- Không nên nhầm lẫn như sau:
+- Bạn nên chuyển chế độ trang web về light mode để xem rõ hơn.
 
-![1746888101804](image/background/1746888101804.png)
+```jsx live
+function MyComponent(props) {
+  return (
+    <>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            .gradient-border-background {
+              width: 300px;
+              height: 300px;
+              border: 3px solid transparent;
+              border-radius: 8px;
+              background-image: linear-gradient(white, white),
+                linear-gradient(104deg, #6bbffb, #8591ff 48%, #d293f2 96%);
+              background-origin: border-box;
+              background-clip: padding-box, border-box;
+              padding: 10px;
+            }
+          `,
+        }}
+      />
+      <div className="gradient-border-background">
+        <p>Hello World</p>
+      </div>
+    </>
+  );
+}
+```
+
+- Ở ví dụ dưới đây, bạn nên chuyển lại trang web về dark mode để xem 😆😆😆
+
+```jsx live
+function MyComponent(props) {
+  return (
+    <>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            .gradient-border-background-2 {
+              width: 300px;
+              height: 300px;
+              position: relative;
+              background-clip: padding-box;
+              border: 2px solid transparent;
+              background-color: #fff;
+              border-radius: 8px;
+              padding: 16px;
+            }
+
+            .gradient-border-background-2:before {
+              content: '';
+              position: absolute;
+              inset: 0;
+              z-index: -1;
+              margin: -5px;
+              background-image: linear-gradient(to right top, #2979ff, #07a787);
+              border-radius: inherit;
+            }
+          `,
+        }}
+      />
+      <div className="gradient-border-background-2">
+        <p>Hello World</p>
+      </div>
+    </>
+  );
+}
+```
