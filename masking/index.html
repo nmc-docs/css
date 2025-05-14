@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.7.0">
 <title data-rh="true">Masking | CSS</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://github.com/css/masking"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Masking | CSS"><meta data-rh="true" name="description" content="1. Masking là gì?"><meta data-rh="true" property="og:description" content="1. Masking là gì?"><link data-rh="true" rel="icon" href="/css/img/logo.svg"><link data-rh="true" rel="canonical" href="https://github.com/css/masking"><link data-rh="true" rel="alternate" href="https://github.com/css/masking" hreflang="en"><link data-rh="true" rel="alternate" href="https://github.com/css/masking" hreflang="x-default"><link rel="stylesheet" href="/css/assets/css/styles.b13b49a0.css">
-<script src="/css/assets/js/runtime~main.d2f0f8c0.js" defer="defer"></script>
+<script src="/css/assets/js/runtime~main.dd7ad73f.js" defer="defer"></script>
 <script src="/css/assets/js/main.d17b8dbb.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -19,9 +19,72 @@
 </li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="2-cấu-trúc-thuộc-tính-cơ-bản">2. Cấu trúc thuộc tính cơ bản<a href="#2-cấu-trúc-thuộc-tính-cơ-bản" class="hash-link" aria-label="Direct link to 2. Cấu trúc thuộc tính cơ bản" title="Direct link to 2. Cấu trúc thuộc tính cơ bản">​</a></h2>
-<table><thead><tr><th>Thuộc tính</th><th>Giá trị</th><th>Mô tả</th></tr></thead><tbody><tr><td><code>mask-image</code></td><td><code>url(...)</code><br><code>linear-gradient(...)</code></td><td>Hình ảnh hoặc gradient dùng làm mặt nạ</td></tr><tr><td><code>mask-repeat</code></td><td><code>repeat</code><br><code>repeat-x</code><br><code>repeat-y</code><br><code>no-repeat</code></td><td>Lặp lại mặt nạ hay không</td></tr><tr><td><code>mask-size</code></td><td><code>contain</code><br><code>cover</code><br>Đơn vị px, %</td><td>Kích thước mặt nạ</td></tr><tr><td><code>mask-position</code></td><td><code>left top</code><br><code>left center</code><br><code>left bottom</code><br>...<br><em>x% y%</em><br><em>xpos ypos</em></td><td>Vị trí của mặt nạ</td></tr><tr><td><code>mask-origin</code></td><td><code>border-box</code><br><code>content-box</code><br><code>padding-box</code></td><td>Mốc bắt đầu của mặt nạ</td></tr></tbody></table>
+<table><thead><tr><th>Thuộc tính</th><th>Giá trị</th><th>Mô tả</th></tr></thead><tbody><tr><td><code>mask-image</code></td><td><code>url(...)</code><br><code>linear-gradient(...)</code></td><td>Hình ảnh hoặc gradient dùng làm mặt nạ</td></tr><tr><td><code>mask-repeat</code></td><td><code>repeat</code><br><code>repeat-x</code><br><code>repeat-y</code><br><code>no-repeat</code></td><td>Lặp lại mặt nạ hay không</td></tr><tr><td><code>mask-size</code></td><td><code>contain</code><br><code>cover</code><br>Đơn vị px, %</td><td>Kích thước mặt nạ</td></tr><tr><td><code>mask-position</code></td><td><code>left top</code><br><code>left center</code><br><code>left bottom</code><br>...<br><em>x% y%</em><br><em>xpos ypos</em></td><td>Vị trí của mặt nạ</td></tr><tr><td><code>mask-origin</code></td><td><code>border-box</code><br><code>content-box</code><br><code>padding-box</code></td><td>Mốc bắt đầu của mặt nạ</td></tr><tr><td><code>mask</code></td><td><code>&lt;mask-image&gt;</code> <code>&lt;mask-mode&gt;</code> <code>&lt;mask-repeat&gt;</code> <code>&lt;mask-position&gt;</code> <code>&lt;mask-clip&gt;</code> <code>&lt;mask-origin&gt;</code> <code>&lt;mask-size&gt;</code> <code>&lt;mask-composite&gt;</code></td><td>Cú pháp viết ngắn gọn của các thuộc tính trên</td></tr></tbody></table>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><ul>
 <li>Các thuộc tính trên về ý nghĩa thì khá giống với <strong>background</strong>. Xem chi tiết <a href="/css/background">tại đây</a></li>
+<li>Ta có thể định nghĩa 2 hoặc nhiều mask, ngăn cách nhau bởi dấu phẩy. Xem <a href="#v%C3%AD-d%E1%BB%A5-4">ví dụ 4 bên dưới</a>.</li>
+</ul></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="mask-composite">mask-composite<a href="#mask-composite" class="hash-link" aria-label="Direct link to mask-composite" title="Direct link to mask-composite">​</a></h3>
+<ul>
+<li><code>mask-composite</code> quyết định cách vùng mờ (transparent) và vùng hiển thị (opaque) của các lớp mặt nạ được kết hợp. Các lớp mặt nạ được xếp chồng lên nhau, và thuộc tính này xác định cách chúng &quot;giao nhau&quot; hoặc &quot;kết hợp&quot; để tạo ra hiệu ứng mặt nạ cuối cùng.</li>
+<li>Các giá trị của <code>mask-composite</code>:<!-- -->
+<ul>
+<li><strong>add</strong> (mặc định):<!-- -->
+<ul>
+<li>Các vùng hiển thị (opaque) của các lớp mặt nạ được <strong>cộng gộp</strong> lại.</li>
+<li>Nếu bất kỳ lớp mặt nạ nào có vùng hiển thị tại một điểm, điểm đó sẽ hiển thị trong kết quả cuối cùng.</li>
+<li>Tương đương với toán tử <strong>union</strong> (hợp) trong hình học.</li>
+<li>Ví dụ: Nếu lớp mặt nạ 1 có vùng hiển thị ở vị trí A và lớp mặt nạ 2 có vùng hiển thị ở vị trí B, cả A và B đều hiển thị.</li>
+</ul>
+</li>
+<li><strong>subtract</strong>:<!-- -->
+<ul>
+<li>Lớp mặt nạ phía trên <strong>trừ đi</strong> vùng hiển thị của các lớp mặt nạ phía dưới.</li>
+<li>Chỉ các vùng hiển thị của lớp mặt nạ trên cùng được giữ lại, trừ đi các vùng hiển thị của các lớp dưới.</li>
+<li>Tương đương với toán tử <strong>difference</strong> (hiệu).</li>
+<li>Ví dụ: Nếu lớp mặt nạ 1 hiển thị ở A, nhưng lớp mặt nạ 2 cũng hiển thị ở A, thì A sẽ bị loại bỏ trong kết quả.</li>
+</ul>
+</li>
+<li><strong>intersect</strong>:<!-- -->
+<ul>
+<li>Chỉ các vùng <strong>giao nhau</strong> (nơi tất cả các lớp mặt nạ đều hiển thị) được giữ lại.</li>
+<li>Nếu một điểm không hiển thị ở bất kỳ lớp mặt nạ nào, nó sẽ không xuất hiện trong kết quả.</li>
+<li>Tương đương với toán tử <strong>intersection</strong> (giao).</li>
+<li>Ví dụ: Nếu lớp mặt nạ 1 hiển thị ở A và lớp mặt nạ 2 cũng hiển thị ở A, thì A được giữ lại; các vùng khác bị loại bỏ.</li>
+</ul>
+</li>
+<li><strong>exclude</strong>:<!-- -->
+<ul>
+<li>Các vùng hiển thị của các lớp mặt nạ được <strong>loại trừ lẫn nhau</strong> .</li>
+<li>Một điểm chỉ hiển thị nếu nó xuất hiện trong một lớp mặt nạ mà không xuất hiện trong các lớp khác.</li>
+<li>Tương đương với toán tử <strong>XOR</strong> (hoặc độc quyền).</li>
+<li>Ví dụ: Nếu lớp mặt nạ 1 hiển thị ở A và lớp mặt nạ 2 không hiển thị ở A, thì A được giữ lại. Nếu cả hai đều hiển thị ở A, thì A bị loại bỏ.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Lưu ý</div><div class="admonitionContent_BuS1"><ul>
+<li>Khi ta định nghĩa: <code>mask-image: url(mask1.png), url(mask2.png);</code> thì:<!-- -->
+<ul>
+<li><strong>Lớp mặt nạ được định nghĩa đầu tiên</strong> (url(mask1.png)) là <strong>lớp dưới cùng</strong> .</li>
+<li><strong>Lớp mặt nạ được định nghĩa cuối cùng</strong> (url(mask2.png)) là <strong>lớp trên cùng</strong> .</li>
+</ul>
+</li>
+</ul></div></div>
+<ul>
+<li>Ví dụ:</li>
+</ul>
+<div class="language-css codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-css codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token property" style="color:#36acaa">mask-image</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> </span><span class="token url function" style="color:#d73a49">url</span><span class="token url punctuation" style="color:#393A34">(</span><span class="token url" style="color:#36acaa">mask1.png</span><span class="token url punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token url function" style="color:#d73a49">url</span><span class="token url punctuation" style="color:#393A34">(</span><span class="token url" style="color:#36acaa">mask2.png</span><span class="token url punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token property" style="color:#36acaa">mask-composite</span><span class="token punctuation" style="color:#393A34">:</span><span class="token plain"> subtract</span><span class="token punctuation" style="color:#393A34">;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><ul>
+<li>Ở ví dụ trên:<!-- -->
+<ul>
+<li><strong>Lớp trên cùng</strong> : <code>url(mask2.png)</code> (lớp mặt nạ thứ hai).</li>
+<li><strong>Lớp dưới cùng</strong> : <code>url(mask1.png)</code> (lớp mặt nạ thứ nhất).</li>
+</ul>
+</li>
+</ul><ul>
+<li>Kết quả: Các vùng hiển thị của <strong>mask2.png</strong> được giữ lại, nhưng bất kỳ phần nào của <strong>mask2.png</strong> giao với vùng hiển thị của <strong>mask1.png</strong> sẽ bị loại bỏ.</li>
 </ul></div></div>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="3-ví-dụ-mask-với-image">3. Ví dụ mask với image<a href="#3-ví-dụ-mask-với-image" class="hash-link" aria-label="Direct link to 3. Ví dụ mask với image" title="Direct link to 3. Ví dụ mask với image">​</a></h2>
 <div class="playgroundContainer_X_Ta"><div class="playgroundHeader_dyrN">Live Editor</div><div class="playgroundEditor_Q6Y7"><pre class="prism-code language-tsx" style="margin:0;outline:none;padding:10px;font-family:inherit;color:#393A34;background-color:#f6f8fa" spellcheck="false"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">function</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">MyComponent</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">props</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span>
@@ -57,8 +120,17 @@
 </span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span>
 </span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span>
 </span></pre></div><div class="playgroundHeader_dyrN">Result</div><div class="playgroundPreview_DzOI"><div>Loading...</div></div></div>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="4-ví-dụ-mask-với-linear-gradient">4. Ví dụ mask với linear-gradient<a href="#4-ví-dụ-mask-với-linear-gradient" class="hash-link" aria-label="Direct link to 4. Ví dụ mask với linear-gradient" title="Direct link to 4. Ví dụ mask với linear-gradient">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ví-dụ-1">Ví dụ 1:<a href="#ví-dụ-1" class="hash-link" aria-label="Direct link to Ví dụ 1:" title="Direct link to Ví dụ 1:">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="4-masking-với-linear-gradient">4. Masking với linear-gradient<a href="#4-masking-với-linear-gradient" class="hash-link" aria-label="Direct link to 4. Masking với linear-gradient" title="Direct link to 4. Masking với linear-gradient">​</a></h2>
+<div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Lưu ý</div><div class="admonitionContent_BuS1"><ul>
+<li>Nếu <code>mask-image</code> có giá trị là linear-gradient thì nó <strong>hoạt động dựa trên độ trong suốt (alpha) của gradient, không phải dựa trên màu sắc của nó</strong>, tức là:<!-- -->
+<ul>
+<li>Vùng đen hoàn toàn với <strong>alpha = 1</strong> sẽ <strong>hiển thị</strong>.</li>
+<li>Vùng đen nhưng <strong>alpha = 0</strong> sẽ <strong>ẩn đi</strong>.</li>
+<li>Tức là: <strong>alpha</strong> mới là yếu tố quyết định độ trong suốt / che của mặt nạ (<code>mask</code>), <strong>không phải màu đen hay trắng</strong> như trong <code>background-image</code>.</li>
+</ul>
+</li>
+</ul></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ví-dụ-1">Ví dụ 1<a href="#ví-dụ-1" class="hash-link" aria-label="Direct link to Ví dụ 1" title="Direct link to Ví dụ 1">​</a></h3>
 <div class="playgroundContainer_X_Ta"><div class="playgroundHeader_dyrN">Live Editor</div><div class="playgroundEditor_Q6Y7"><pre class="prism-code language-tsx" style="margin:0;outline:none;padding:10px;font-family:inherit;color:#393A34;background-color:#f6f8fa" spellcheck="false"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">function</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">MyComponent</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">props</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span>
 </span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token keyword" style="color:#00009f">return</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"></span>
 </span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain-text"></span>
@@ -76,7 +148,7 @@
 </span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              mask-repeat: no-repeat;</span>
 </span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              mask-position: 0 0;</span>
 </span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              mask-size: 100% 100%;</span>
-</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              mask-image: linear-gradient(90deg,#000 33%,#0000 66%);</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              mask-image: linear-gradient(90deg,rgba(0, 0, 0, 1) 33%,rgba(0, 0, 0, 0) 66%);</span>
 </span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">            }</span>
 </span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">          </span><span class="token tag script language-javascript template-string template-punctuation string" style="color:#e3116c">`</span><span class="token tag script language-javascript punctuation" style="color:#393A34">,</span><span class="token tag script language-javascript" style="color:#00009f"></span>
 </span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript" style="color:#00009f">        </span><span class="token tag script language-javascript punctuation" style="color:#393A34">}</span><span class="token tag script language-javascript punctuation" style="color:#393A34">}</span><span class="token tag" style="color:#00009f"></span>
@@ -91,21 +163,21 @@
 <p>Phân tích gradient:</p>
 <ul>
 <li><code>90deg</code>: Gradient đi từ trái sang phải.</li>
-<li><code>#000 33%</code>: Từ 0% đến 33% chiều rộng của phần tử, mask là màu đen (#000), tức là <strong>hiển thị hoàn toàn</strong>.</li>
-<li><code>#0000 66%</code>: Từ 33% đến 66% chiều rộng, gradient chuyển từ đen sang trong suốt (#0000). Phần này sẽ chuyển dần từ <strong>hiển thị</strong> sang <strong>ẩn</strong>.</li>
-<li>Sau 66%: Từ 66% đến 100%, gradient duy trì trạng thái trong suốt (#0000), tức là <strong>ẩn hoàn toàn</strong>.</li>
+<li><code>rgba(0, 0, 0, 1) 33%</code>: Từ 0% đến 33% chiều rộng của phần tử, mask là màu đen (độ alpha = 1), tức là <strong>hiển thị hoàn toàn</strong>.</li>
+<li><code>rgba(0, 0, 0, 0) 66%</code>: Từ 33% đến 66% chiều rộng, gradient chuyển từ đen sang trong suốt (alpha = 0). Phần này sẽ chuyển dần từ <strong>hiển thị</strong> sang <strong>ẩn</strong>.</li>
+<li>Sau 66%: Từ 66% đến 100%, gradient duy trì trạng thái trong suốt (alpha = 0), tức là <strong>ẩn hoàn toàn</strong>.</li>
 </ul>
 </li>
 <li>
 <p>Phần hiển thị và phần ẩn:</p>
 <ul>
-<li><strong>Phần hiển thị</strong>: Từ 0% đến 33% chiều rộng của phần tử, nội dung (hình ảnh hoặc nền) sẽ <strong>hiển thị hoàn toàn</strong> vì mask là đen (#000).</li>
+<li><strong>Phần hiển thị</strong>: Từ 0% đến 33% chiều rộng của phần tử, nội dung (hình ảnh hoặc nền) sẽ <strong>hiển thị hoàn toàn</strong> vì mask là đen (alpha = 1).</li>
 <li><strong>Phần chuyển tiếp</strong>: Từ 33% đến 66%, nội dung dần dần <strong>mờ đi</strong> (từ hiển thị sang ẩn) do gradient chuyển từ đen sang trong suốt.</li>
-<li><strong>Phần ẩn</strong>: Từ 66% đến 100%, nội dung <strong>bị ẩn hoàn toàn</strong> vì mask là trong suốt (#0000).</li>
+<li><strong>Phần ẩn</strong>: Từ 66% đến 100%, nội dung <strong>bị ẩn hoàn toàn</strong> vì mask là trong suốt (alpha = 0).</li>
 </ul>
 </li>
 </ul></div></div>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ví-dụ-2">Ví dụ 2:<a href="#ví-dụ-2" class="hash-link" aria-label="Direct link to Ví dụ 2:" title="Direct link to Ví dụ 2:">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ví-dụ-2">Ví dụ 2<a href="#ví-dụ-2" class="hash-link" aria-label="Direct link to Ví dụ 2" title="Direct link to Ví dụ 2">​</a></h3>
 <div class="playgroundContainer_X_Ta"><div class="playgroundHeader_dyrN">Live Editor</div><div class="playgroundEditor_Q6Y7"><pre class="prism-code language-tsx" style="margin:0;outline:none;padding:10px;font-family:inherit;color:#393A34;background-color:#f6f8fa" spellcheck="false"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">function</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">MyComponent</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">props</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span>
 </span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token keyword" style="color:#00009f">return</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"></span>
 </span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain-text"></span>
@@ -124,7 +196,7 @@
 </span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              mask-repeat: no-repeat;</span>
 </span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              mask-position: 0 0;</span>
 </span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              mask-size: 300% 100%;</span>
-</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              mask-image: linear-gradient(90deg,#000 33%,#0000 66%);</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              mask-image: linear-gradient(90deg,rgba(0, 0, 0, 1) 33%,rgba(0, 0, 0, 0) 66%);</span>
 </span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">            }</span>
 </span><span class="token-line" style="color:#393A34">
 </span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">            .masked-gradient:hover {</span>
@@ -154,7 +226,7 @@
 </span><span class="token-line" style="color:#393A34">
 </span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              mask-repeat: no-repeat;</span>
 </span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              mask-position: 0 0;</span>
-</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              mask-size: 50% 100%; /* Chỉnh 50% 100% thành 150% 150% để xem sự khác biệt */</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              mask-size: 50% 100%;</span>
 </span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);</span>
 </span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">            }</span>
 </span><span class="token-line" style="color:#393A34">
@@ -168,6 +240,50 @@
 </span><span class="token-line" style="color:#393A34"><span class="token plain-text">    </span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span>
 </span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span>
 </span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span>
-</span></pre></div><div class="playgroundHeader_dyrN">Result</div><div class="playgroundPreview_DzOI"><div>Loading...</div></div></div></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/css/clip-path"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">clip-path</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-masking-là-gì" class="table-of-contents__link toc-highlight">1. Masking là gì?</a></li><li><a href="#2-cấu-trúc-thuộc-tính-cơ-bản" class="table-of-contents__link toc-highlight">2. Cấu trúc thuộc tính cơ bản</a></li><li><a href="#3-ví-dụ-mask-với-image" class="table-of-contents__link toc-highlight">3. Ví dụ mask với image</a></li><li><a href="#4-ví-dụ-mask-với-linear-gradient" class="table-of-contents__link toc-highlight">4. Ví dụ mask với linear-gradient</a><ul><li><a href="#ví-dụ-1" class="table-of-contents__link toc-highlight">Ví dụ 1:</a></li><li><a href="#ví-dụ-2" class="table-of-contents__link toc-highlight">Ví dụ 2:</a></li><li><a href="#ví-dụ-3" class="table-of-contents__link toc-highlight">Ví dụ 3</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
+</span></pre></div><div class="playgroundHeader_dyrN">Result</div><div class="playgroundPreview_DzOI"><div>Loading...</div></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><ul>
+<li>Chỉnh <code>mask-size</code> từ <code>50% 100%</code> thành <code>150% 150%</code> để xem sự khác biệt</li>
+</ul></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ví-dụ-4">Ví dụ 4<a href="#ví-dụ-4" class="hash-link" aria-label="Direct link to Ví dụ 4" title="Direct link to Ví dụ 4">​</a></h3>
+<ul>
+<li>Bạn hãy thay đổi trang web này về chế độ dark mode để xem demo ví dụ dưới đây:</li>
+</ul>
+<div class="playgroundContainer_X_Ta"><div class="playgroundHeader_dyrN">Live Editor</div><div class="playgroundEditor_Q6Y7"><pre class="prism-code language-tsx" style="margin:0;outline:none;padding:10px;font-family:inherit;color:#393A34;background-color:#f6f8fa" spellcheck="false"><span class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">function</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">MyComponent</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">props</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span>
+</span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token keyword" style="color:#00009f">return</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"></span>
+</span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain-text"></span>
+</span><span class="token-line" style="color:#393A34"><span class="token plain-text">      </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">style</span><span class="token tag" style="color:#00009f"></span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag" style="color:#00009f">        </span><span class="token tag attr-name" style="color:#00a4db">dangerouslySetInnerHTML</span><span class="token tag script language-javascript script-punctuation punctuation" style="color:#393A34">=</span><span class="token tag script language-javascript punctuation" style="color:#393A34">{</span><span class="token tag script language-javascript punctuation" style="color:#393A34">{</span><span class="token tag script language-javascript" style="color:#00009f"></span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript" style="color:#00009f">          __html</span><span class="token tag script language-javascript operator" style="color:#393A34">:</span><span class="token tag script language-javascript" style="color:#00009f"> </span><span class="token tag script language-javascript template-string template-punctuation string" style="color:#e3116c">`</span><span class="token tag script language-javascript template-string string" style="color:#e3116c"></span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">            .gradient-border-masked {</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              margin: 20px;</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              width: 300px;</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              height: 300px;</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              position: relative;</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              padding: 16px;</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">            }</span>
+</span><span class="token-line" style="color:#393A34">
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">            .gradient-border-masked::before {</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              content: &#x27;&#x27;;</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              position: absolute;</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              inset: 0;</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              border-radius: 16px;</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              padding: 5px;</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              background: linear-gradient(104deg, #6bbffb, #8591ff 48%, #d293f2 96%);</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              mask: linear-gradient(to right, #000 0%, #000 100%) content-box,</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">                linear-gradient(to right, #000 0%, #000 100%);</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              mask-composite: subtract;</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">              z-index: -1;</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">            }</span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript template-string string" style="color:#e3116c">          </span><span class="token tag script language-javascript template-string template-punctuation string" style="color:#e3116c">`</span><span class="token tag script language-javascript punctuation" style="color:#393A34">,</span><span class="token tag script language-javascript" style="color:#00009f"></span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag script language-javascript" style="color:#00009f">        </span><span class="token tag script language-javascript punctuation" style="color:#393A34">}</span><span class="token tag script language-javascript punctuation" style="color:#393A34">}</span><span class="token tag" style="color:#00009f"></span>
+</span><span class="token-line" style="color:#393A34"><span class="token tag" style="color:#00009f">      </span><span class="token tag punctuation" style="color:#393A34">/&gt;</span><span class="token plain-text"></span>
+</span><span class="token-line" style="color:#393A34"><span class="token plain-text">      </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">div</span><span class="token tag" style="color:#00009f"> </span><span class="token tag attr-name" style="color:#00a4db">className</span><span class="token tag attr-value punctuation attr-equals" style="color:#393A34">=</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag attr-value" style="color:#e3116c">gradient-border-masked</span><span class="token tag attr-value punctuation" style="color:#393A34">&quot;</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain-text">Hello World</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">div</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain-text"></span>
+</span><span class="token-line" style="color:#393A34"><span class="token plain-text">    </span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span>
+</span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span>
+</span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span>
+</span></pre></div><div class="playgroundHeader_dyrN">Result</div><div class="playgroundPreview_DzOI"><div>Loading...</div></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><ul>
+<li>Ở ví dụ trên, thuộc tính <code>padding: 5px</code> chính là chỉ định độ dày của border.</li>
+</ul></div></div></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/css/clip-path"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">clip-path</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-masking-là-gì" class="table-of-contents__link toc-highlight">1. Masking là gì?</a></li><li><a href="#2-cấu-trúc-thuộc-tính-cơ-bản" class="table-of-contents__link toc-highlight">2. Cấu trúc thuộc tính cơ bản</a><ul><li><a href="#mask-composite" class="table-of-contents__link toc-highlight">mask-composite</a></li></ul></li><li><a href="#3-ví-dụ-mask-với-image" class="table-of-contents__link toc-highlight">3. Ví dụ mask với image</a></li><li><a href="#4-masking-với-linear-gradient" class="table-of-contents__link toc-highlight">4. Masking với linear-gradient</a><ul><li><a href="#ví-dụ-1" class="table-of-contents__link toc-highlight">Ví dụ 1</a></li><li><a href="#ví-dụ-2" class="table-of-contents__link toc-highlight">Ví dụ 2</a></li><li><a href="#ví-dụ-3" class="table-of-contents__link toc-highlight">Ví dụ 3</a></li><li><a href="#ví-dụ-4" class="table-of-contents__link toc-highlight">Ví dụ 4</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div>
 </body>
 </html>
