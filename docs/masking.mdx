@@ -123,6 +123,45 @@ function MyComponent(props) {
   - Vùng đen hoàn toàn với **alpha = 1** sẽ **hiển thị**.
   - Vùng đen nhưng **alpha = 0** sẽ **ẩn đi**.
   - Tức là: **alpha** mới là yếu tố quyết định độ trong suốt / che của mặt nạ (`mask`), **không phải màu đen hay trắng** như trong `background-image`.
+  - Ngoài ra còn có giá trị `transparent`, nó tương ứng với **alpha = 0** (ẩn hoàn toàn).
+
+:::
+
+:::info
+
+- Ví dụ về một giá trị linear-gradient của mask image:
+
+```css
+mask-image: linear-gradient(
+  to right,
+  transparent 0,
+  transparent 51px,
+  #000 77px,
+  #000 50%,
+  transparent 75%,
+  transparent 100%
+);
+```
+
+- Trong ví dụ trên, gradient chạy **theo chiều ngang** từ **trái sang phải** (`to right`).
+- Phân tích từng điểm dừng:
+  | STT | Vị trí dừng | Màu (mask) | Mức độ hiển thị | Ghi chú mô tả chi tiết |
+  | --- | ----------- | ------------- | ------------------ | ---------------------------------------------------- |
+  | 1 | `0` | `transparent` | Ẩn hoàn toàn | Bắt đầu gradient, hoàn toàn trong suốt |
+  | 2 | `51px` | `transparent` | Ẩn hoàn toàn | Vẫn giữ trong suốt đến 51px |
+  | 3 | `77px` | `#000` | Hiển thị hoàn toàn | Từ 51px đến 77px sẽ là vùng **fade-in** từ ẩn → hiện |
+  | 4 | `50%` | `#000` | Hiển thị hoàn toàn | Tiếp tục hiển thị toàn bộ đến giữa phần tử |
+  | 5 | `75%` | `transparent` | Ẩn dần | Từ 50% đến 75% là vùng **fade-out** từ hiện → ẩn |
+  | 6 | `100%` | `transparent` | Ẩn hoàn toàn | Kết thúc gradient, hoàn toàn trong suốt |
+
+- Tóm lại:
+  | Khoảng | Hiệu ứng |
+  | ------------- | ------------------------ |
+  | `0 → 51px` | Ẩn hoàn toàn |
+  | `51px → 77px` | **Fade-in** (ẩn → hiện) |
+  | `77px → 50%` | Hiển thị hoàn toàn |
+  | `50% → 75%` | **Fade-out** (hiện → ẩn) |
+  | `75% → 100%` | Ẩn hoàn toàn |
 
 :::
 
