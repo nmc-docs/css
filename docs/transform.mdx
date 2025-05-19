@@ -1,0 +1,135 @@
+---
+sidebar_position: 14
+---
+
+# transform
+
+- **Transform** là thuộc tính chuyển đổi phần tử. Nó cho phép bạn thay đổi vị trí, hình dáng và xoay các phần tử theo nhiều hướng khác nhau.
+
+| Property           | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `transform`        | 👉`scale(x)`: Phần tử sẽ được phóng to lên `x` lần so với ban đầu (theo cả chiều ngang + dọc)<br />👉`scale(x, y)`: Phần tử được phóng to lên `x` lần theo chiều ngang, `y` lần theo chiều dọc<br />👉`scaleX(x)`: Phần tử được phóng to lên `x` lần theo chiều ngang<br />👉`scaleY(x)`: Phần tử được phóng to lên `x` lần theo chiều dọc<br />👉`translate(apx, bpx)`: Phần tử sẽ dịch chuyển theo chiều ngang `apx` về bên phải, `bpx`xuống dưới so với vị trí ban đầu. Nếu là giá trị phần trăm thì sẽ di chuyển theo chiều ngang, chiều dọc tương ứng với % chiều dài, chiều rộng của phần tử (cho phép giá trị âm, nếu có giá trị âm sẽ dịch chuyển theo chiều ngược lại)<br />👉`translateX(apx / a%)`: Di chuyển phần tử theo chiều ngang (tương tự như translate bên trên)<br />👉`translateY(apx / a%)`: Di chuyển phần tử theo chiểu dọc (tương tự như translate bên trên)<br />👉`rotate(adeg)`: Phần tử sẽ xoay a độ theo chiều kim đồng hồ so với phương ban đầu (xoay 2D)<br />👉`rotate3d(x, y, z, deg)`: Với `x`, `y`, `z` nhận giá trị 0 hoặc 1 là tọa độ vector trục quay, `deg` là góc xoay<br />👉`rotateX(angle)`: Xoay phần tử quanh **trục X** (ngang trái-phải). Hiệu ứng thường giống như **lật lên/lật xuống**<br />👉`rotateY(angle)`: Xoay phần tử quanh **trục Y** (dọc trên-dưới). Hiệu ứng giống như **lật sang trái/phải**<br />👉`rotateZ(angle)`: Xoay phần tử quanh **trục Z** (vuông góc với màn hình). Hiệu ứng giống như **xoay phẳng** trong mặt phẳng 2D. |
+| `transform-origin` | -`transform-origin` là một thuộc tính trong CSS xác định điểm gốc (điểm neo) của phép biến đổi (`transform`). Khi bạn áp dụng các phép biến đổi như `rotate`, `scale`, `translate`, hoặc `skew`, thuộc tính này quyết định vị trí bắt đầu của phép biến đổi đó.<br />- Mặc định, `transform-origin` được đặt ở **tâm của phần tử (`50% 50%`)** .<br />- Cú pháp: `transform-origin: x y z;`<br />`x`: Xác định vị trí theo chiều ngang (có thể là phần trăm, pixel, từ khóa `left`, `center`, `right`).<br />`y`: Xác định vị trí theo chiều dọc (`top`, `center`, `bottom` hoặc đơn vị đo lường).<br />`z` (tùy chọn): Xác định trục Z (chỉ áp dụng khi có `perspective`).<br />- Nếu nó có giá trị phần trăm, giá trị phần trăm này được tính theo kích thước của phần tử                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+
+:::tip
+
+- Thuộc tính transform có thể nhận nhiều giá trị 1 lúc, cách nhau bởi dấu cách, ví dụ:
+
+📌 Biến đổi cùng lúc: kéo ngang rộng hơn, kéo dọc thấp hơn, và xoay nhẹ.
+
+```css
+transform: scaleX(1.2) scaleY(0.8) rotate(15deg);
+```
+
+:::
+
+- Ví dụ về transform origin:
+
+![1739028361302](image/transform/1739028361302.png)
+
+![1739028380441](image/transform/1739028380441.png)
+
+## 📌 So sánh các cách xoay
+
+| Hàm xoay    | Trục xoay | Tương đương `rotate3d`                   | Loại xoay |
+| ----------- | --------- | ---------------------------------------- | --------- |
+| `rotate()`  | Z         | `rotateZ()`hoặc `rotate3d(0, 0, 1, deg)` | 2D        |
+| `rotateX()` | X         | `rotate3d(1, 0, 0, deg)`                 | 3D        |
+| `rotateY()` | Y         | `rotate3d(0, 1, 0, deg)`                 | 3D        |
+| `rotateZ()` | Z         | `rotate3d(0, 0, 1, deg)`                 | 3D        |
+
+## 👁️ Lưu ý khi dùng `rotateX/Y/Z`:
+
+- Muốn thấy **hiệu ứng 3D rõ ràng** , nên kết hợp với:
+  - `perspective`: tạo chiều sâu cho phần tử cha.
+  - `transform-style: preserve-3d`: để phần tử con duy trì hiệu ứng 3D.
+
+## 💡Ví dụ tạo hiệu ứng card xoay 180 độ sử dụng rotate
+
+```jsx live
+function MyComponent(props) {
+  return (
+    <>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            .card-container {
+              perspective: 1000px;
+            }
+
+            .my-card {
+              width: 300px;
+              height: 400px;
+              position: relative;
+              transform-style: preserve-3d;
+              transition: transform 0.6s ease-in-out;
+            }
+
+            .my-card:hover {
+              transform: rotateY(180deg);
+            }
+
+            .card-front, .card-back {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              backface-visibility: hidden;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 10px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .card-front {
+              background-color: #3498db;
+              color: white;
+              font-size: 24px;
+            }
+
+            .card-back {
+              background-color: #e74c3c;
+              color: white;
+              font-size: 24px;
+              transform: rotateY(180deg);
+            }
+          `,
+        }}
+      />
+      <div className="card-container">
+        <div className="my-card">
+          <div className="card-front">Mặt Trước</div>
+          <div className="card-back">Mặt Sau</div>
+        </div>
+      </div>
+    </>
+  );
+}
+```
+
+## 💡Ví dụ kết hợp nhiều giá trị
+
+```jsx live
+function MyComponent(props) {
+  return (
+    <>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            .card-combined {
+              margin: 0 auto;
+              width: 200px;
+              height: 200px;
+              background-color: #3498db;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+              border-radius: 10px;
+              transform: scaleX(1.2) scaleY(0.8) rotate(15deg);
+            }
+          `,
+        }}
+      />
+      <div className="card-combined"></div>
+    </>
+  );
+}
+```
