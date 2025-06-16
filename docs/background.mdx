@@ -28,7 +28,7 @@ background-position: <giá trị ngang> <giá trị dọc>;
 
 🔹 Các giá trị mà `background-position` có thể nhận:
 
-###### 1. **Từ khóa định hướng** :
+#### 1. **Từ khóa định hướng** :
 
 - `left`, `center`, `right` (cho **trục ngang**)
 - `top`, `center`, `bottom` (cho **trục dọc**)
@@ -41,10 +41,10 @@ background-position: center center;
 background-position: bottom right;
 ```
 
-###### 2. **Giá trị đơn vị (px, %, em, rem, ...)**
+#### 2. **Giá trị đơn vị (px, %, em, rem, ...)**
 
 - Dùng để chỉ định khoảng cách chính xác từ cạnh phần tử.
-- `%` dựa trên kích thước của phần tử chứa và hình nền.
+- `%` dựa trên kích thước của **phần tử container chứa hình nền**.
 
 📌 Ví dụ:
 
@@ -54,7 +54,13 @@ background-position: 50% 50%; /* chính giữa */
 background-position: 100% 0%; /* góc trên bên phải */
 ```
 
-###### 3. **Chỉ một giá trị**
+:::note[Thông tin thêm]
+
+- Giá trị của `background-position` có thể nhận **GIÁ TRỊ ÂM**. Hình nền sẽ dịch chuyển sang trái (theo chiều ngang), lên trên (theo chiều dọc). Bạn có thể thử ở trình live code bên dưới.
+
+:::
+
+#### 3. **Chỉ một giá trị**
 
 - Nếu chỉ ghi **1 giá trị** , trình duyệt hiểu như sau:
   - Nếu là từ khóa (`left`, `center`, `right`), thì trục dọc mặc định là `center`.
@@ -85,9 +91,7 @@ background-position: 30px; /* tương đương 30px center */
 
 :::
 
-- Không nên nhầm lẫn như sau:
-
-![1746888101804](image/background/1746888101804.png)
+![1750087397777](image/background/1750087397777.png)
 
 ## Một số ví dụ
 
@@ -155,7 +159,7 @@ function MyComponent(props) {
 
 - Bạn nên chuyển chế độ trang web về light mode để xem rõ hơn.
 
-```jsx live
+```jsx
 function MyComponent(props) {
   return (
     <>
@@ -186,7 +190,7 @@ function MyComponent(props) {
 
 - Ở ví dụ dưới đây, bạn nên chuyển lại trang web về dark mode để xem 😆😆😆
 
-```jsx live
+```jsx
 function MyComponent(props) {
   return (
     <>
