@@ -85,8 +85,59 @@ Chú ý: điều kiện để có thể sử dụng giá trị `auto` là:
 
 :::
 
-- `margin-top`, `margin-bottom`, `margin-left`, `margin-right` có thể nhận giá trị âm. Ví dụ `margin-top: -5px` sẽ đẩy phần tử lên trên **5px** thay vì đẩy phần tử xuống **5px** . Các thuộc tính khác tương tự.
+:::info[Thông tin thêm]
+
+- `margin-top`, `margin-bottom`, `margin-left`, `margin-right` có thể nhận giá trị âm.
 - Ngoài ra chúng còn có thể nhận giá trị theo đơn vị %. Đơn vị % này được tính theo chiều dài/cao của phần tử cha container bao nó.
+
+:::
+
+```jsx live
+function MyComponent(props) {
+  return (
+    <>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            .margin-test-container {
+              width: 350px;
+              height: 150px;
+              background-color: red;
+              display: flex;
+            }
+
+            .margin-test-child1 {
+              width: 48px;
+              height: 48px;
+              background-color: yellow;
+              margin-right: -20px;
+              margin-top: auto;
+            }
+
+            .margin-test-child2 {
+              width: 48px;
+              height: 48px;
+              background-color: blue;
+            }
+
+            .margin-test-child3 {
+              width: 48px;
+              height: 48px;
+              background-color: teal;
+              margin-top: 10%;
+            }
+          `,
+        }}
+      />
+      <div className="margin-test-container">
+        <div className="margin-test-child1"></div>
+        <div className="margin-test-child2"></div>
+        <div className="margin-test-child3"></div>
+      </div>
+    </>
+  );
+}
+```
 
 ## Box-sizing
 
