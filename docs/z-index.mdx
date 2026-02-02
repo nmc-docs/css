@@ -1,0 +1,353 @@
+---
+sidebar_position: 17
+---
+
+# Z-index
+
+## Giới thiệu
+
+:::info
+
+- `z-index` là thuộc tính CSS kiểm soát thứ tự xếp chồng (stacking order) của các phần tử định vị (positioned elements) dọc theo trục Z (trục chiều sâu).
+
+:::
+
+```css
+.element {
+  position: relative | absolute | fixed | sticky;
+  z-index: value;
+}
+```
+
+:::caution[Lưu ý]
+
+- Lưu ý quan trọng: `z-index` chỉ có tác dụng với các phần tử có thuộc tính `position` khác `static` (mặc định).
+
+:::
+
+## Cơ bản về z-index
+
+### Giá trị mặc định
+
+- Mọi phần tử có `z-index: auto` (tương đương với `z-index: 0` trong cùng một stacking context).
+
+### Thứ tự xếp chồng mặc định (không có z-index)
+
+- Khi không có `z-index` được thiết lập, thứ tự xếp chồng từ dưới lên trên là:
+
+1. Nền và viền của phần tử gốc
+2. Các phần tử con không định vị (non-positioned), theo thứ tự trong HTML
+3. Các phần tử con định vị (positioned), theo thứ tự trong HTML
+
+### Ví dụ cơ bản
+
+```jsx live
+// Trong ví dụ này, Blue sẽ nằm trên cùng vì xuất hiện cuối cùng trong HTML.
+function ZIndexExampleCmp1() {
+  const boxBaseStyle = {
+    width: "200px",
+    height: "200px",
+    position: "absolute",
+  };
+
+  return (
+    <div style={{ position: "relative", height: "500px" }}>
+      <div
+        style={{
+          ...boxBaseStyle,
+          backgroundColor: "rgba(255, 0, 0, 0.8)",
+          top: "50px",
+          left: "50px",
+        }}
+      >
+        Red (z-index: auto)
+      </div>
+
+      <div
+        style={{
+          ...boxBaseStyle,
+          backgroundColor: "rgba(0, 255, 0, 0.8)",
+          top: "100px",
+          left: "100px",
+        }}
+      >
+        Green (z-index: auto)
+      </div>
+
+      <div
+        style={{
+          ...boxBaseStyle,
+          backgroundColor: "rgba(0, 0, 255, 0.8)",
+          top: "150px",
+          left: "150px",
+        }}
+      >
+        Blue (z-index: auto)
+      </div>
+    </div>
+  );
+}
+```
+
+## Ngữ cảnh xếp chồng (Stacking Context)
+
+### Khái niệm
+
+- **Stacking context** là một nhóm các phần tử có cùng ngữ cảnh xếp chồng. Mỗi stacking context hoàn toàn độc lập với các stacking context khác.
+
+### Cách hoạt động
+
+- Mỗi stacking context có "gốc" riêng
+- `z-index` chỉ so sánh được trong cùng một stacking context
+- Phần tử con không thể vượt ra ngoài stacking context của cha nó
+
+## Các thuộc tính tạo stacking context
+
+Một số thuộc tính CSS tạo stacking context mới:
+
+1. **Position khác static + z-index khác auto**
+2. **Opacity < 1**
+3. **Transform khác none**
+4. **Filter khác none**
+5. **Mix-blend-mode khác normal**
+6. **Isolation: isolate**
+7. **Clip-path khác none**
+8. **Mask/mask-image/mask-border khác none**
+9. **Perspective khác none**
+10. **Will-change với giá trị tạo context**
+
+### Ví dụ về stacking context
+
+```jsx live
+function ZIndexExampleCmp2() {
+  const containerStyle = {
+    position: "relative",
+    width: "300px",
+    height: "300px",
+    background: "#eee",
+    zIndex: 1, // tạo stacking context mới
+  };
+
+  const childBaseStyle = {
+    position: "absolute",
+    width: "200px",
+    height: "200px",
+  };
+
+  const outsideStyle = {
+    position: "absolute",
+    width: "200px",
+    height: "200px",
+    background: "rgba(0, 0, 255, 0.8)",
+    top: "120px",
+    left: "120px",
+    zIndex: 0, // thấp hơn container
+  };
+
+  return (
+    <div style={{ position: "relative", height: "500px" }}>
+      <div style={containerStyle}>
+        <div
+          style={{
+            ...childBaseStyle,
+            background: "rgba(255, 0, 0, 0.8)",
+            top: "20px",
+            left: "20px",
+            zIndex: 100, // chỉ so sánh trong container
+          }}
+        >
+          Child 1 (z-index: 100)
+        </div>
+
+        <div
+          style={{
+            ...childBaseStyle,
+            background: "rgba(0, 255, 0, 0.8)",
+            top: "40px",
+            left: "40px",
+            zIndex: 50, // chỉ so sánh trong container
+          }}
+        >
+          Child 2 (z-index: 50)
+        </div>
+      </div>
+
+      <div style={outsideStyle}>Outside (z-index: 0)</div>
+    </div>
+  );
+}
+```
+
+Trong ví dụ này:
+
+- Child 1 nằm trên Child 2 (vì 100 > 50 trong cùng stacking context)
+- Nhưng cả hai đều nằm dưới Outside? KHÔNG! Vì container có `z-index: 1` và đã tạo stacking context riêng
+
+## Ví dụ: Opacity tạo stacking context
+
+```jsx live
+function ZIndexExampleCmp4() {
+  const parentStyle = {
+    position: "relative",
+    width: "300px",
+    height: "200px",
+    background: "#eee",
+  };
+
+  const childHighStyle = {
+    position: "absolute",
+    width: "100px",
+    height: "100px",
+    background: "red",
+    bottom: "10px",
+    left: "100px",
+    zIndex: 100,
+  };
+
+  const parentWithOpacityStyle = {
+    ...parentStyle,
+    background: "#ddd",
+    marginTop: "20px",
+    opacity: 0.99, // tạo stacking context mới
+  };
+
+  const childLowStyle = {
+    position: "absolute",
+    width: "100px",
+    height: "100px",
+    background: "blue",
+    top: "10px",
+    left: "100px",
+    zIndex: 999, // vẫn bị giới hạn trong parent
+  };
+
+  const outsideStyle = {
+    position: "absolute",
+    top: "150px",
+    left: "175px",
+    width: "100px",
+    height: "100px",
+    background: "green",
+    zIndex: 50,
+  };
+
+  return (
+    <div style={{ position: "relative", height: "400px" }}>
+      <div style={parentStyle}>
+        <div style={childHighStyle}>z-index: 100</div>
+      </div>
+
+      <div style={parentWithOpacityStyle}>
+        Opacity: 0.99
+        <div style={childLowStyle}>z-index: 999 (trong parent có opacity)</div>
+      </div>
+
+      <div style={outsideStyle}>Outside z-index: 50</div>
+    </div>
+  );
+}
+```
+
+Trong ví dụ trên:
+
+- opacity < 1 ⇒ tạo stacking context, kể cả 0.99
+- Khối màu xanh da trời (z-index: 999) không thể đè lên khối màu xanh nước biển (z-index: 50)
+  👉 Vì parent khối xanh da trời có opacity nên sẽ tạo stacking context
+- Trong khi khối đỏ (z-index: 100) có thể đè lên khối xanh nước biển
+  👉 Vì parent khối đỏ không tạo stacking context
+
+## Các giá trị của z-index
+
+### Giá trị số nguyên
+
+- Có thể dương, âm, hoặc 0
+
+```css
+.element {
+  z-index: -1; /* Dưới cùng */
+  z-index: 0; /* Mức mặc định */
+  z-index: 1; /* Trên mức mặc định */
+  z-index: 9999; /* Thường dùng cho modal, dropdown */
+}
+```
+
+### Các giá trị đặc biệt
+
+```css
+.element {
+  z-index: auto; /* Mặc định, không tạo stacking context mới */
+  z-index: inherit; /* Kế thừa từ phần tử cha */
+}
+```
+
+## Một số ví dụ khác
+
+```jsx live
+function ZIndexExampleCmp3() {
+  const level1Style = {
+    position: "relative",
+    width: "400px",
+    height: "300px",
+    background: "#eee",
+    margin: "20px",
+    padding: "20px",
+    zIndex: 1, // tạo stacking context
+  };
+
+  const level2Style = {
+    position: "absolute",
+    width: "300px",
+    height: "200px",
+    background: "rgba(255, 0, 0, 0.7)",
+    top: "50px",
+    left: "50px",
+    zIndex: 10, // chỉ có hiệu lực trong level-1
+  };
+
+  const level3Style = {
+    position: "absolute",
+    width: "200px",
+    height: "150px",
+    background: "rgba(0, 255, 0, 0.7)",
+    top: "100px",
+    left: "100px",
+    zIndex: 5, // thấp hơn level-2 trong cùng context
+  };
+
+  const outsideContextStyle = {
+    position: "absolute",
+    width: "200px",
+    height: "150px",
+    background: "rgba(0, 0, 255, 0.7)",
+    top: "180px",
+    left: "80px",
+    zIndex: 2, // cao hơn level-1 vì khác stacking context
+  };
+
+  return (
+    <div style={{ position: "relative", height: "500px" }}>
+      <div style={level1Style}>
+        <div>Level 1 (z-index: 1, tạo stacking context)</div>
+
+        <div style={level2Style}>Level 2 (z-index: 10)</div>
+
+        <div style={level3Style}>Level 3 (z-index: 5)</div>
+      </div>
+
+      <div style={outsideContextStyle}>Outside (z-index: 2)</div>
+    </div>
+  );
+}
+```
+
+## Tổng kết
+
+`z-index` là công cụ mạnh mẽ nhưng cần hiểu rõ để sử dụng hiệu quả:
+
+- Chỉ hoạt động với phần tử định vị (position khác static)
+- Hoạt động trong phạm vi stacking context
+- Stacking context có thể được tạo bởi nhiều thuộc tính CSS
+- Nên sử dụng hệ thống quản lý `z-index` có tổ chức
+- Ưu tiên giải pháp đơn giản trước khi dùng `z-index`
+
+Hiểu rõ `z-index` và stacking context giúp tránh các vấn đề về xếp chồng phần tử và tạo giao diện người dùng phức tạp một cách chính xác.
