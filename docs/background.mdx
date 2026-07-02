@@ -44,15 +44,19 @@ background-position: bottom right;
 #### 2. **Giá trị đơn vị (px, %, em, rem, ...)**
 
 - Dùng để chỉ định khoảng cách chính xác từ cạnh phần tử.
-- `%` dựa trên kích thước của **phần tử container chứa hình nền**.
+- Nếu có giá trị là đơn vị `%`, nó sẽ tính dựa trên công thức sau: `(kích thước container - kích thước background image) × (phần trăm / 100)`
 
 📌 Ví dụ:
 
-```css
-background-position: 20px 10px; /* 20px từ trái, 10px từ trên */
-background-position: 50% 50%; /* chính giữa */
-background-position: 100% 0%; /* góc trên bên phải */
-```
+- Container có chiều rộng **1000px**
+- Background image có chiều rộng **600px**
+
+| Giá trị `background-position-x` | Khoảng cách từ cạnh trái container đến cạnh trái image |
+| ------------------------------- | ------------------------------------------------------ |
+| 20px                            | 20px                                                   |
+| 0%                              | 0px                                                    |
+| 50%                             | (1000 - 600) × 0.5 = **200px**                         |
+| 100%                            | (1000 - 600) × 1 = **400px**                           |
 
 :::note[Thông tin thêm]
 
@@ -90,8 +94,6 @@ background-position: 30px; /* tương đương 30px center */
 ```
 
 :::
-
-![1750087397777](image/background/1750087397777.png)
 
 ## Một số ví dụ
 
